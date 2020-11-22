@@ -19,11 +19,11 @@
 
 console.log("Задание 1");
 
-function Account({login, email}) {
-  this.login=login;
-  this.email=email;
-};
-Account.prototype.getInfo = function(){
+function Account({ login, email }) {
+  this.login = login;
+  this.email = email;
+}
+Account.prototype.getInfo = function () {
   console.log(`Login:${this.login}, Email:${this.email}`);
 };
 

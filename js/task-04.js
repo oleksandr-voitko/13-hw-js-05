@@ -1,4 +1,4 @@
-// Задание 2
+// Задание 4
 // Напиши класс StringBuilder. На вход он получает один параметр - строку, которую записывает в свойство _value.
 
 // Добавь классу следующий функционал:
@@ -8,15 +8,35 @@
 // Метод prepend(str) - получает парметр str (строку) и добавляет ее в начало value
 // Метод pad(str) - получает парметр str (строку) и добавляет ее в начало и в конец _value
 
-console.log("Задание 2");
+console.log("Задание 4");
+class StringBuilder {
+  constructor(value) {
+    this._value = value;
+  }
+  get value() {
+    return this._value;
+  }
 
-const builder = new StringBuilder('.');
+  append(str) {
+    this._value += str;
+  }
 
-builder.append('^');
+  prepend(str) {
+    this._value = str + this._value;
+  }
+
+  pad(str) {
+    this._value = str + this._value + str;
+  }
+}
+
+const builder = new StringBuilder(".");
+
+builder.append("^");
 console.log(builder.value); // '.^'
 
-builder.prepend('^');
+builder.prepend("^");
 console.log(builder.value); // '^.^'
 
-builder.pad('=');
+builder.pad("=");
 console.log(builder.value); // '=^.^='
